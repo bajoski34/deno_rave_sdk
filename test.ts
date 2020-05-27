@@ -1,15 +1,12 @@
-// const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-// const data = await res.json();
-// console.log(data);
+import { Rave, config } from './mod.ts';
+const variables = config();
+var payment = new Rave(variables.RAVE_SECRET_KEY,variables.RAVE_PUBLIC_KEY);
+// payment.postURL({
+//     "amount":"5000",
+//     "name": "billerboy2345321",
+//     "interval":"monthly",
+//     "duration":"1"
+// });
 
-import { soxa } from 'https://deno.land/x/soxa/mod.ts'
+payment.getKey();
 
-soxa.get('https://jsonplaceholder.typicode.com/todos/1')
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  });
-  

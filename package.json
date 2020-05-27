@@ -1,0 +1,30 @@
+{
+  "name": "deno-rave",
+  "version": "1.0.0",
+  "description": "An deno SDK for rave",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bajoski34/deno_rave_sdk.git"
+  },
+  "keywords": [
+    "payment",
+    "deno",
+    "rave",
+    "flutterwave",
+    "gateway"
+  ],
+  "author": "Olaobaju Abraham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bajoski34/deno_rave_sdk/issues"
+  },
+  "homepage": "https://github.com/bajoski34/deno_rave_sdk#readme"
+}
