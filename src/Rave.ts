@@ -5,10 +5,9 @@ import { Sha256 } from 'https://deno.land/std/hash/sha256.ts';
 import { Md5 } from 'https://deno.land/std/hash/md5.ts';
 // import { escapeHtml } from "https://raw.githubusercontent.com/ako-deno/escape_html/master/mod.ts";
 import { soxa } from 'https://deno.land/x/soxa/mod.ts';
-
-var CryptoJS = require('crypto-js');
-var forge    = require('node-forge');
-var utf8     = require('utf8');
+import { createRequire } from "https://deno.land/std/node/module.ts";
+// var forge    = require('node-forge');
+// var utf8     = require('utf8');
 
 
 
@@ -533,8 +532,8 @@ export class Rave  {
      * @return string
      * */
 
-     getKey() {
-        let sec_key = this.secKey;
+     getKey(secretKey:string) {
+        let sec_key = secretKey;
         let keymd5 = md5.update(sec_key).toString();
         console.log(keymd5);
         let keymd5last12 = keymd5.substr(-12);
@@ -551,7 +550,7 @@ export class Rave  {
      * @return string
      * */
 
-    encrypt(key, text)
+    encrypt(key:string, text:string)
     {
        
         var cipher   = forge.cipher.createCipher('3DES-ECB', forge.util.createBuffer(key));
@@ -567,13 +566,13 @@ export class Rave  {
      * @return string
      * */
 
-     encryption($options){
+     encryption(options:string){
          //encrypt and return the key using the secrekKey
-         $this->key = $this->getkey($this->secretKey);
+         this.key = this.getKey(this.secKey);
          //set the data to transactionData
-         $this->transactionData = $options;
+         this.transactionData = options;
          //encode the data and the 
-        return $this->encrypt3Des( $this->transactionData,  $this->key);
+        return this.encrypt3Des( this.transactionData,  this.key);
     }
     
          initialize() {

@@ -26,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/bajoski34/deno_rave_sdk/issues"
   },
-  "homepage": "https://github.com/bajoski34/deno_rave_sdk#readme"
+  "homepage": "https://github.com/bajoski34/deno_rave_sdk#readme",
+  "dependencies": {
+    "@types/crypto-js": "^3.1.47",
+    "@types/node": "^14.0.5",
+    "crypto-js": "^4.0.0"
+  }
 }
